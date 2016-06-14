@@ -1,8 +1,8 @@
 # compiled output
 /platforms
-/app/**/*.js
-/app/**/*.js.map
-/app/**/*.css
+*.js
+*.js.map
+*.css
 
 # dependencies
 /node_modules
