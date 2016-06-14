@@ -8,8 +8,7 @@ import { Page } from "ui/page";
     selector: "my-app",
     directives: [NS_ROUTER_DIRECTIVES],
     providers: [NS_ROUTER_PROVIDERS],
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.css']
+    template: '<page-router-outlet></page-router-outlet>'
 })
 @RouteConfig([
     { path: "/Landing", component: LandingComponent, name: "Landing", useAsDefault: true },

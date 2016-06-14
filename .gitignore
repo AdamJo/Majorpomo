@@ -1,17 +1,10 @@
-
 # compiled output
 /platforms
 /app/**/*.js
-**.js.map
+/app/**/*.js.map
+/app/**/*.css
 
 # dependencies
 /node_modules
 /hooks
-
-# IDEs and editors
-/.idea
-
-# misc
-npm-debug.log
-/typings
 
