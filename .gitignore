@@ -1,6 +1,8 @@
 
 # compiled output
 /platforms
+/app/**/*.js
+**.js.map
 
 # dependencies
 /node_modules
@@ -13,5 +15,3 @@
 npm-debug.log
 /typings
 
-/app/**/*.js
-**.js.map
