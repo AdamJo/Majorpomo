@@ -1,0 +1,17 @@
+
+# compiled output
+/platforms
+
+# dependencies
+/node_modules
+/hooks
+
+# IDEs and editors
+/.idea
+
+# misc
+npm-debug.log
+/typings
+
+/app/**/*.js
+**.js.map

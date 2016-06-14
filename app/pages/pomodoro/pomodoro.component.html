@@ -1,0 +1,15 @@
+<StackLayout class="container">
+  <label class="title" [text]="flag"></label>
+  <Label class="duration" [text]="duration"></Label>
+  <StackLayout class="timer">
+    <Button [text]="clock.running ? 'PAUSE' : 'START'" (tap)=playPause()></Button>
+    <Button text="STOP" (tap)=reset()></Button>
+    <Button text="RESET" (tap)=resetAll()></Button>
+  </StackLayout>
+  <StackLayout class="options">
+    <Label text="Pomo - {{pomo}} minutes"></Label>
+    <Slider [isEnabled]="clock.running ? false : true" #slPomo minValue=1  maxValue=120 [value]='pomo' (valueChange)="onPomoChange(slPomo.value)"></Slider>
+    <Label text="Break - {{break}} minutes"></Label>
+    <Slider [isEnabled]="clock.running ? false : true" #slBreak minValue=1  maxValue=45 [value]='break' (valueChange)="onBreakChange(slBreak.value)"></Slider>
+  </StackLayout>
+<StackLayout>
