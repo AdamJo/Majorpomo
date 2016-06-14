@@ -50,10 +50,16 @@ export class Clock {
     this.stop();
     this.elapsedTime = 0;
   }
+  /**
+   * formats numbers to always have a leading 0
+   */
   pad(num, size) {
     let s = '0000' + num;
     return s.substr(s.length - size);
   };
+  /**
+   * format time duration
+   */
   formatTime(userTime : number) {
     this.getDelta();
     let newTime = '';

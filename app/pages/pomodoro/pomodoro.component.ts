@@ -1,8 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Clock } from '../../shared/clock.helper'
 import { setInterval, clearInterval } from 'timer'
 import { TextField } from "ui/text-field";
-import { View } from "ui/core/view";
 import { Page } from "ui/page";
 import { Slider } from "ui/slider"
 import application = require("application");
@@ -25,16 +24,27 @@ export class PomodoroComponent implements OnInit {
 
   constructor(private clock: Clock, private page: Page) {}
 
+  /**
+   * disables top action bar on this page
+   */
   ngOnInit() {
     this.page.actionBarHidden = true;
+    /**
+     * disables back button which stops current pomo section
+     */
     if (application.android) {
       application.android.on(application.AndroidApplication.activityBackPressedEvent, this.backEvent);
     }
   }
+  /** 
+   * 
+   */
   backEvent(args) {
     args.cancel = true
   }
-
+  /**
+   * toggle timer start/stop
+   */
   playPause() {
     if (!this.clock.running) {
       this.clock.start();
@@ -44,6 +54,9 @@ export class PomodoroComponent implements OnInit {
       this.clock.stop();
     }
   }
+  /** 
+   * starts the timer
+   */
   time() {
     let time;
     if (this.flag === 'POMODORO') {
@@ -61,23 +74,35 @@ export class PomodoroComponent implements OnInit {
       }
     }, 1)
   }
+  /** 
+   * resets timer for either pomo or break
+   */
   reset() {
     this.clearInterval(this.interval);
     this.clock.reset();
     this.duration = '00:00:00'
   }
+  /** 
+   * resets everything initial 
+   */
   resetAll() {
     this.clearInterval(this.interval);
     this.clock.reset();
     this.duration = '00:00:00'
     this.flag = 'POMODORO';
   }
+  /** 
+   * when the slider changes onBreakChange(newTime) resets the timer duration 
+   */
   onBreakChange(newtime){
     if (this.duration !== "00:00:00") {
       this.reset();
     }
     this.break=newtime;
   }
+  /** 
+   * when the slider changes onPomoChange(newTime) resets the timer duration 
+   */
   onPomoChange(newtime){
     if (this.duration !== "00:00:00") {
       this.reset();

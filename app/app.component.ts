@@ -15,8 +15,11 @@ import { Page } from "ui/page";
     { path: "/Pomo", component: PomodoroComponent, name: "Pomo" }
 ])
 export class AppComponent implements OnInit {
-   
+
    constructor(private page: Page){}
+   /**
+   * disables top action bar on this page
+   */
    ngOnInit() {
      this.page.actionBarHidden = true;
    }
