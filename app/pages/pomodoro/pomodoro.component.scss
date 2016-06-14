@@ -1,30 +1,30 @@
 @import 'resources/_variables.scss';
 
 button {
-  background-color: #E7AA15;
+  background-color: $secondary-color;
   font-size: 30;
   width : 130px;
   height : 60px;
 }
 label {
-  color : $primary-color;
+  color : $primary-text-color;
 }
 stack-layout {
     horizontal-align: center;
-    text-align: center; 
-    background-color: #000000;
+    text-align: center;
+    background-color: $primary-color;
 }
 .duration {
   text-align: center;
   font-size: 45%;
 }
-.options{
+.options {
   margin-top: 40px;
   width: 80%;
 }
 .container {
   width: 100%;
-  background-color: #000000;
+  background-color: $primary-color;
 }
 .title { 
   margin: 15% 0 5% 0;
@@ -32,6 +32,6 @@ stack-layout {
 }
 slider {
   width : 80%;
-  color: #E7AA15;
-  background-color: #C9251C;
+  color: $secondary-color;
+  background-color: $accent-color;
 }

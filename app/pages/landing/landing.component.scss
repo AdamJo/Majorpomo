@@ -1,10 +1,12 @@
+@import 'resources/_variables.scss';
+
 stack-layout {
-    background-color: black;
+    background-color: $primary-color;
     height: 100%;
 }
 button {
     width: 60%;
-    background-color: #E7AA15;
+    background-color: $secondary-color;
     animation-name: drop;
     animation-duration: 2;
     animation-timing-function: spring;
